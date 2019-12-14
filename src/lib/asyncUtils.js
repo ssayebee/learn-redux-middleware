@@ -38,7 +38,7 @@ export const reducerUtils = {
     })
 }
 
-export const handleAsuncActions = (type, key, keepData = false) => {
+export const handleAsyncActions = (type, key, keepData = false) => {
     const [SUCCESS, ERROR] = [`${type}_SUCCESS`, `${type}_ERROR`];
     return (state, action) => {
         switch (action.type) {
@@ -81,7 +81,7 @@ export const createPromiseThunkById = (
     };
 };
 
-export const handleAsuncActionsById = (type, key, keepData = false) => {
+export const handleAsyncActionsById = (type, key, keepData = false) => {
     const [SUCCESS, ERROR] = [`${type}_SUCCESS`, `${type}_ERROR`];
     return (state, action) => {
         const id = action.meta;

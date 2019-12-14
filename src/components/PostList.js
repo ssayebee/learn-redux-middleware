@@ -10,7 +10,7 @@ function PostList({ posts }) {
                 </li>
             ))}
         </ul>
-    )
+    );
 }
 
 export default PostList;

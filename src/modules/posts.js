@@ -1,5 +1,5 @@
 import * as postAPI from '../api/posts';
-import { createPromiseThunk, reducerUtils, handleAsuncActions, createPromiseThunkById, handleAsuncActionsById } from '../lib/asyncUtils';
+import { createPromiseThunk, reducerUtils, handleAsyncActions, createPromiseThunkById, handleAsyncActionsById } from '../lib/asyncUtils';
 
 const GET_POSTS = 'GET_POSTS';
 const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS';
@@ -26,12 +26,12 @@ export default function posts(state=initialState, action) {
         case GET_POSTS:
         case GET_POSTS_SUCCESS:
         case GET_POSTS_ERROR:
-            const postsReducer = handleAsuncActions(GET_POSTS, 'posts', true);
+            const postsReducer = handleAsyncActions(GET_POSTS, 'posts', true);
             return postsReducer(state, action);
         case GET_POST:
         case GET_POST_SUCCESS:
         case GET_POST_ERROR:
-            const postReducer = handleAsuncActionsById(GET_POST, 'post', true);
+            const postReducer = handleAsyncActionsById(GET_POST, 'post', true);
             return postReducer(state, action);
         default:
             return state;
